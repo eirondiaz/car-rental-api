@@ -1,24 +1,22 @@
 import { Router } from 'express'
-import CampusRouter from './campus.routes'
-import UserRouter from './user.routes'
-import SupplierRouter from './supplier.routes'
-import UserTypeRouter from './user-type.routes'
-import CafeteriaRouter from './cafeteria.routes'
 import BrandRouter from './brand.routes'
-import ItemRouter from './item.routes'
+import ClientRouter from './client.routes'
 import EmployeeRouter from './employee.routes'
-import SaleRouter from './sale.routes'
+import FuelRouter from './fuel.routes'
+import ModelRouter from './model.routes'
+import VehicleTypeRouter from './vehicle-type.routes'
+import VehicleRouter from './vehicle.routes'
+import RentRouter from './rent.routes'
 
 const router = Router()
 
-router.use('/cafeterias', CafeteriaRouter)
-router.use('/campus', CampusRouter)
-router.use('/users', UserRouter)
-router.use('/suppliers', SupplierRouter)
-router.use('/user-types', UserTypeRouter)
-router.use('/brands', BrandRouter)
-router.use('/items', ItemRouter)
+router.use('/clients', ClientRouter)
 router.use('/employees', EmployeeRouter)
-router.use('/sales', SaleRouter)
+router.use('/fuels', FuelRouter)
+router.use('/models', ModelRouter)
+router.use('/vehicle-types', VehicleTypeRouter)
+router.use('/vehicles', VehicleRouter)
+router.use('/brands', BrandRouter)
+router.use('/rents', RentRouter)
 
 export default router

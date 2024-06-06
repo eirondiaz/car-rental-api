@@ -9,7 +9,7 @@ interface BrandBody {
 export const getBrands = async (req: Request, res: Response) => {
   try {
     const brand = await Brand.find()
-    return res.json(brand)
+    return res.json({ data: brand })
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message })
@@ -24,7 +24,7 @@ export const getSingleBrand = async (req: Request, res: Response) => {
 
     if (!brand) return res.status(404).json({ message: 'Brand not found' })
 
-    return res.json(brand)
+    return res.json({ data: brand })
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message })
@@ -42,7 +42,7 @@ export const createBrand = async (
   brand.description = description
 
   await brand.save()
-  return res.json(brand)
+  return res.json({ data: brand })
 }
 
 export const updateBrand = async (req: Request, res: Response) => {

@@ -1,14 +1,14 @@
 import { DataSource } from 'typeorm'
 import {
   Brand,
-  Cafeteria,
-  Campus,
+  Client,
   Employee,
-  Item,
-  Supplier,
-  User,
-  UserType,
-  Sale,
+  Fuel,
+  Model,
+  Vehicle,
+  VehicleType,
+  Inspection,
+  Rent,
 } from './model'
 import * as dotenv from 'dotenv'
 
@@ -24,14 +24,14 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   // logging: true,
   entities: [
-    UserType,
-    User,
-    Campus,
-    Supplier,
-    Cafeteria,
     Brand,
-    Item,
+    VehicleType,
+    Model,
+    Fuel,
+    Vehicle,
+    Client,
     Employee,
-    Sale,
+    Inspection,
+    Rent,
   ],
 })

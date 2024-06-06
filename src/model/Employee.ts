@@ -22,10 +22,10 @@ export class Employee extends BaseEntity {
   workShift: string
 
   @Column()
-  admissionDate: string
+  commissionPercentage: string
 
   @Column()
-  commissionPercentage: string
+  hiringDate: string
 
   @Column({ default: true })
   status: boolean

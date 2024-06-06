@@ -1,4 +1,3 @@
-import { Campus } from './'
 import {
   Entity,
   Column,
@@ -6,22 +5,27 @@ import {
   BaseEntity,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToOne,
 } from 'typeorm'
 
 @Entity()
-export class Cafeteria extends BaseEntity {
+export class Client extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
   @Column()
-  description: string
-
-  @ManyToOne((type) => Campus, (campus) => campus.id)
-  campusId!: Campus
+  name: string
 
   @Column()
-  encargado: string
+  cedula: string
+
+  @Column()
+  creditCard: string
+
+  @Column()
+  creditLimit: string
+
+  @Column()
+  type: string
 
   @Column({ default: true })
   status: boolean

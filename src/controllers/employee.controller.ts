@@ -6,14 +6,14 @@ interface EmployeeBody {
   name: string
   cedula: string
   workShift: string
-  admissionDate: string
+  hiringDate: string
   commissionPercentage: string
 }
 
 export const getEmployees = async (req: Request, res: Response) => {
   try {
     const employees = await Employee.find()
-    return res.json(employees)
+    return res.json({ data: employees })
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message })
@@ -29,7 +29,7 @@ export const getSingleEmployee = async (req: Request, res: Response) => {
     if (!employee)
       return res.status(404).json({ message: 'Employee not found' })
 
-    return res.json(employee)
+    return res.json({ data: employee })
   } catch (error) {
     if (error instanceof Error) {
       return res.status(500).json({ message: error.message })
@@ -41,18 +41,17 @@ export const createEmployee = async (
   req: Request<unknown, unknown, EmployeeBody>,
   res: Response
 ) => {
-  const { name, cedula, workShift, admissionDate, commissionPercentage } =
-    req.body
+  const { name, cedula, workShift, hiringDate, commissionPercentage } = req.body
   const employee = new Employee()
 
   employee.name = name
   employee.cedula = cedula
   employee.workShift = workShift
-  employee.admissionDate = admissionDate
+  employee.hiringDate = hiringDate
   employee.commissionPercentage = commissionPercentage
 
   await employee.save()
-  return res.json(employee)
+  return res.json({ data: employee })
 }
 
 export const updateEmployee = async (req: Request, res: Response) => {
@@ -60,7 +59,7 @@ export const updateEmployee = async (req: Request, res: Response) => {
 
   try {
     const brand = await Employee.findOneBy({ id })
-    if (!brand) return res.status(404).json({ message: 'Not brand found' })
+    if (!brand) return res.status(404).json({ message: 'Not employee found' })
     const mBrand = new Employee()
 
     const body = req.body

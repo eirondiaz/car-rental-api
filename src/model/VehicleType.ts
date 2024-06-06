@@ -8,15 +8,12 @@ import {
 } from 'typeorm'
 
 @Entity()
-export class Supplier extends BaseEntity {
+export class VehicleType extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
   @Column()
-  comercialName: string
-
-  @Column({ unique: true })
-  rnc: string
+  description: string
 
   @Column({ default: true })
   status: boolean

@@ -1,11 +1,21 @@
-import { Sale } from './Sale'
+import { Rent } from './Rent'
+import { Inspection } from './Inspection'
 import { Employee } from './Employee'
-import { Item } from './Item'
+import { Client } from './Client'
+import { Fuel } from './Fuel'
+import { Model } from './Model'
+import { VehicleType } from './VehicleType'
 import { Brand } from './Brand'
-import { Supplier } from './Supplier'
-import { UserType } from './UserType'
-import { Campus } from './Campus'
-import { User } from './User'
-import { Cafeteria } from './Cafeteria'
+import { Vehicle } from './Vehicle'
 
-export { Campus, User, Cafeteria, UserType, Supplier, Brand, Item, Employee, Sale }
+export {
+  Brand,
+  VehicleType,
+  Model,
+  Fuel,
+  Vehicle,
+  Client,
+  Employee,
+  Inspection,
+  Rent,
+}
