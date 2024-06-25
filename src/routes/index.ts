@@ -7,6 +7,7 @@ import ModelRouter from './model.routes'
 import VehicleTypeRouter from './vehicle-type.routes'
 import VehicleRouter from './vehicle.routes'
 import RentRouter from './rent.routes'
+import AuthRouter from './auth.routes'
 
 const router = Router()
 
@@ -18,5 +19,6 @@ router.use('/vehicle-types', VehicleTypeRouter)
 router.use('/vehicles', VehicleRouter)
 router.use('/brands', BrandRouter)
 router.use('/rents', RentRouter)
+router.use('/auth', AuthRouter)
 
 export default router

@@ -9,6 +9,7 @@ import {
   VehicleType,
   Inspection,
   Rent,
+  User,
 } from './model'
 import * as dotenv from 'dotenv'
 
@@ -33,5 +34,6 @@ export const AppDataSource = new DataSource({
     Employee,
     Inspection,
     Rent,
+    User,
   ],
 })

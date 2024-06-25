@@ -1,3 +1,4 @@
+import { User } from './User'
 import { Rent } from './Rent'
 import { Inspection } from './Inspection'
 import { Employee } from './Employee'
@@ -18,4 +19,5 @@ export {
   Employee,
   Inspection,
   Rent,
+  User
 }
